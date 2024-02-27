@@ -4,7 +4,7 @@ from flask_cors import CORS, cross_origin
 from matplotlib.pyplot import text
 import pandas as pd
 import difflib
-import model
+from backend import model
 import nltk
 from langdetect import detect
 from deep_translator import GoogleTranslator
@@ -12,7 +12,7 @@ from googletrans import Translator
 
 TEMPLATES_AUTO_RELOAD = True
 use_reloader=True
-app = Flask(__name__,static_folder="F:/Project-Legal.ly/build",static_url_path='/')
+app = Flask(__name__,static_folder="F:/LegalEaseFork/build",static_url_path='/')
 app.debug = True
 app.config["DEBUG"] = True
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -61,14 +61,22 @@ def get_bot_response():
         if input_lang == 'ta':
             query_english = translator.translate(query)
             print(query_english)
+        elif input_lang == 'hi':
+            query_english = translator.translate(query)
+            print(query_english)
         else:
             query_english = query
         
     translator1 = GoogleTranslator(source='auto', target='ta')
+    translator2 = GoogleTranslator(source='auto', target='hi')
     if input_lang == 'ta':
         ans_temp="Hi There! Welcome! Ask me your legal queries"
-        ans_translated = translator1.translate(ans_temp)
-        return ans_translated
+        ans_translated1 = translator1.translate(ans_temp)
+        return ans_translated1
+    elif input_lang == 'hi':
+        ans_temp="Hi There! Welcome! Ask me your legal queries"
+        ans_translated2 = translator2.translate(ans_temp)
+        return ans_translated2
     else:
         ans_temp="Hi There! Welcome to LegalEase! You can ask your legal queries"
         return ans_temp
@@ -107,7 +115,7 @@ if __name__ == "__main__":
 # import model
 # import nltk
 
-# app = Flask(__name__,static_folder="F:/Project-Legal.ly/build",static_url_path='/')
+# app = Flask(__name__,static_folder="F:/LegalEaseFork/build",static_url_path='/')
 # app.config["TEMPLATES_AUTO_RELOAD"] = True
 # cors = CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'

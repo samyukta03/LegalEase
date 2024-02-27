@@ -24,11 +24,14 @@ const Dictaphone = ({ input, setinput }) => {
       ? SpeechRecognition.startListening({language:lang})
       : SpeechRecognition.stopListening();
     console.log(transcript);
-    if(transcript=="Tamil"){
+    if(transcript=="Tamil" || transcript == "தமிழ்" || transcript == "तमिल" ){
       lang="ta-IN"
     }
-    if (transcript=="இங்கிலீஷ்"){
+    if (transcript=="இங்கிலீஷ்" || transcript =="English" || transcript == "अंग्रेज़ी"){
       lang="en"
+    }
+    if(transcript == "Hindi" || transcript == "ஹிந்தி" || transcript =="हिंदी"){
+      lang = "hi-IN"
     }
     setinput(transcript);
   };
