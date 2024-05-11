@@ -3,7 +3,7 @@
 **Problem Statement - Chatbot - Law details, Relevant Supreme Court case Details & Legal Advice, Multi-Lingual and Voice Support**
 <br/>
 
-![legal.ly_main](https://github.com/samyukta03/LegalEaseFork/main/forgithub.png)
+![legalease_main](https://github.com/samyukta03/LegalEaseFork/blob/main/forgithub.png)
 
 <br/>**LegalEase**, is a chatbot that provides factual and appropriate information to legal queries from central acts. 
 <br/>
@@ -25,9 +25,9 @@ To provide the user with more guidance, supreme court cases that happened across
 In addition to the above, using a HyBrid BERT-BiLSTM model predicts the likelihood of favorability to a party in a case based on the outcomes of similar cases scraped.
 
 
-## UI MOCKUPS
-![Why_UPN](https://github.com/samyukta03/LegalEaseFork/main/UI_Mockup.png)
 
+## UI Developed:
+![UI](https://github.com/samyukta03/LegalEaseFork/blob/main/UI.png)
 ## Deployment
 
 To deploy this project run
@@ -37,9 +37,18 @@ To deploy this project run
 ```
 
 After cloning the project steps to run:
-1. Create a Python 3.8 environment
+1. Create a Python 3.8 environment 
+ ```python
+  conda create --name py8
+```
 2. Go to the project folder, Activate the environment: conda activate envt_name
-3. Go to backend->app.py file - python app.py
+ ```python
+  conda activate py8
+```
+3. Go to backend->app.py file - 
+ ```python
+  python app.py
+```
 4. For the frontend, open the legalease folder in a node cmd and run, (if u update anything, run cmd again for the update to be rendered)  
  ```bash
   npm run build
