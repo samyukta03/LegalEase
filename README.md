@@ -1,7 +1,6 @@
-# Legal.ly - _law for all_
-**Team Hopium - Hackathon Coding Sprint**
+# LegalEase - _Legal Assistance for all_
 <br/>
-**Problem Statement - Chatbot - Legal, Tax, and Compliance**
+**Problem Statement - Chatbot - Law details, Legal Advice, Multi-Lingual and Voice Support**
 <br/>
 
 ![legal.ly_main](https://github.com/sudo-logic/Project-Legal.ly/blob/main/forgithub.png)
