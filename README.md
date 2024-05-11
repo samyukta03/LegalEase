@@ -1,39 +1,32 @@
 # LegalEase - _Legal Assistance for all_
 <br/>
-**Problem Statement - Chatbot - Law details, Legal Advice, Multi-Lingual and Voice Support**
+**Problem Statement - Chatbot - Law details, Relevant Supreme Court case Details & Legal Advice, Multi-Lingual and Voice Support**
 <br/>
 
-![legal.ly_main](https://github.com/sudo-logic/Project-Legal.ly/blob/main/forgithub.png)
+![legal.ly_main](https://github.com/samyukta03/LegalEaseFork/main/forgithub.png)
 
-<br/>**Legal.ly**, is a chatbot that provides factual and appropriate information to legal queries from central acts. 
+<br/>**LegalEase**, is a chatbot that provides factual and appropriate information to legal queries from central acts. 
 <br/>
-<br/>This chatbot can be effectively applied to the legal sector providing swift access to justice. Legal.ly is designed specifically to help individuals seek accurate legal information. Information is sourced directly from the Central Acts of India, hence eliminating any misinformation.
+<br/> The chatbot integrates key features to enhance accessibility and legal awareness. It offers multilingual support, automatic language detection, translation capabilities, and speech recognition functionalities, ensuring inclusivity for users of various language proficiency. Through natural language processing, the chatbot analyzes user scenarios, matches them with relevant laws, regulations, similar cases, and provides valuable legal insights.
 
-Our project aims at building a specialised task-oriented chatbot, named as Legal.ly, which will allow users to ask questions; thus,democratizing legal, tax and compliance. 
+ Our proposed legal assistant chatbot project is a direct response to the urgent need for improved legal accessibility, offering a holistic solution. Utilizing state-of-the-art technologies like natural language processing, machine learning, and web scraping, the project aims to deliver personalized legal guidance, multilingual support, and automatic speech recognition. This initiative seeks to empower individuals to make informed decisions regarding their legal matters, thereby advancing fairness, equality, and justice for all.
 
 The prime objective is to structure an intelligent chatbot, which is not only data-driven but also incorporates machine learning and deep learning algorithms to map input sequences to output sequences.
-<br/>Legal.ly provides 24-hour legal assistance and is reliable in emergencies too.
-<br/>
-<br/>Legal.ly responds to both voice and text for increased accessibility.
 
-## For more information [Presentation](https://pitch.com/public/9c74e7cd-dc0f-4d6a-8659-0bdcf709b1fd)
+
+<br/>LegalEase responds to both voice and text along with multi linguality for increased accessibility.
+
 
 # Methodology
-This project is a hybrid of pure experimentation and a multitude of algorithms that we incorporated to ensure accuracy and conciseness.
+This project is implemented using a combination of machine learning algorithms like the Siamese Neural Network model for finding the most similar laws that are relevant and applicable to a scenario posted by a user from the dataset.
 
-Seq2Seq model was put under training, using diverse datasets and tensorlayer, spacy and pickle libraries. We used this to tackle problems like machine translation, text summarization and question-answering. But since it's generative we had to leave it midway. 
-Along with that, we've used regex for information extraction. Applied lemmatization to provide context to the model. Currently, we are planning on implementing nearest keyword recognition. Once we find the nearest keywords, relevant information can be easily generated.  NearestNeighbours using sklearn is one way we've thought of.
+To provide the user with more guidance, supreme court cases that happened across the years are scraped and reformatted to a dataset are stored, and using a graph-based similarity ranking approach the most relevant and similar cases to the scenario posted by the user are chosen among the cases and their key points and outcome are presented to the user for them to get more idea of how to proceed further.
 
-Because of the time crunch, we couldn't train the model fully and add a few more functionalities for our chatbot to be conversational and knowledge-oriented.
-
-Hence, we had to go with our second plan of using Fuzzy Query Matching to map the input to the most accurate topic in our dataset.
-We now use roberta-base-squad2 (a Question Answering Model trained on the SQuAD2.0 dataset), which extracts answers from given inputs of Question and Context. Narrowing down on the topic helps us narrow down on the data that we send to roberta making the response more accurate.
-
-GPT-3, Seq2Seq, reinforcement learning based chatbots and a hybrid of those are some of the methodologies we've tinkered around with.
+In addition to the above, using a HyBrid BERT-BiLSTM model predicts the likelihood of favorability to a party in a case based on the outcomes of similar cases scraped.
 
 
 ## UI MOCKUPS
-![Why_UPN](https://github.com/sudo-logic/Project-Legal.ly/blob/main/UI_Mockup.png)
+![Why_UPN](https://github.com/samyukta03/LegalEaseFork/main/UI_Mockup.png)
 
 ## Deployment
 
@@ -43,9 +36,14 @@ To deploy this project run
   npm start
 ```
 
-
- 
-
+After cloning the project steps to run:
+1. Create a Python 3.8 environment
+2. Go to the project folder, Activate the environment: conda activate envt_name
+3. Go to backend->app.py file - python app.py
+4. For the frontend, open the legalease folder in a node cmd and run, (if u update anything, run cmd again for the update to be rendered)  
+ ```bash
+  npm run build
+```
 
 ## Usage/Examples
 
