@@ -13,7 +13,7 @@ function Threads() {
   const [msg, setmsg] = useState(input);
   const [typing, settyping] = useState(false);
   const [messages, setMessages] = useState([]);
-
+  const [language, setLanguage] = useState(""); 
   const handleClick = () => {
     setchecked(!checked);
   };
@@ -21,7 +21,7 @@ function Threads() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input+" heyyyy input")
-    const response = await axios.post("http://127.0.0.1:5000/api", { msg: input });
+    const response = await axios.post("http://127.0.0.1:5000/api", { msg: input ,language: language});
     setMessages([...messages, { input: input, res: response.data }]);
     setinput("");
   };
@@ -55,6 +55,7 @@ function Threads() {
       </div>
       {/* Message Area */}
       <div className="overflow-y-scroll h-[75vh] py-2 px-4 scrollbar scrollbar-thumb-gray-900 scrollbar-h-[2vh] ">
+      <Response msg="Welcome to LegalEase. <p style={{ whiteSpace: 'pre-line' }}>You can chat in: English or தமிழ் or हिंदी</p>" />
         {messages.map((res, index) => (
           <div key={index} className="py-2 pl-4">
             <Input msg={res.input} />
@@ -89,6 +90,8 @@ function Threads() {
           <Dictaphone
             input={input}
             setinput={setinput}
+            language={language}
+            setLanguage={setLanguage}
             className="cursor-pointer px-0"
           />
         </div>
